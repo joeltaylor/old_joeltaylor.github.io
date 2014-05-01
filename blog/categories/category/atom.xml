@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Category | My Octopress Blog]]></title>
   <link href="http://joeltaylor.github.io/blog/categories/category/atom.xml" rel="self"/>
   <link href="http://joeltaylor.github.io/"/>
-  <updated>2014-05-01T22:26:38+07:00</updated>
+  <updated>2014-05-01T22:34:04+07:00</updated>
   <id>http://joeltaylor.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -18,13 +18,7 @@
     <link href="http://joeltaylor.github.io/blog/2014/05/01/test-post/"/>
     <updated>2014-05-01T22:23:26+07:00</updated>
     <id>http://joeltaylor.github.io/blog/2014/05/01/test-post</id>
-    <content type="html"><![CDATA[<h1>Is this my post?</h1>
-
-
-<p>I suppose this is my first post using octopress. Without a doubt, I already love
-it more than Wordpress. There&rsquo;s something oddly invigorating about sharing my
-thoughts inside of a sublime text. <strong>I really want to work for Hashrocket
-</strong></p>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
