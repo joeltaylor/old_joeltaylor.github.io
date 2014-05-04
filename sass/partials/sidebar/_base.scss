@@ -21,6 +21,32 @@ aside.sidebar {
       }
     }
   }
+  form {
+    @include background-clip(padding-box);
+    margin: 0; padding: 0;
+    .search {
+      padding: .3em 2.5em 0;
+      font-size: .85em;
+      font-family: $sans;
+      line-height: 1.1em;
+      width: 70%;
+      @include background-clip(padding-box);
+      background:url('../images/search_icon.png') lighten($base-accent, 15) 10px no-repeat;
+      border: none;
+      color: #FFF;
+      &:focus {
+        color: #FFF;
+        border-color: #80b1df;
+        @include box-shadow($base-compliment 0 0 4px, $base-compliment 0 0 3px inset);
+
+        outline: none;
+      }
+    }
+  }
+  fieldset[role=search]{ width: 100%; }
+  fieldset.mobile-nav{ float: left; width: 48%;
+    select{ width: 100%; font-size: .8em; border: 1px solid #888;}
+  }
   img {
     @extend .flex-content;
     @extend .basic-alignment;
@@ -29,24 +55,24 @@ aside.sidebar {
   ul {
     margin-bottom: 0.5em;
     margin-left: 0;
+    border-top: 5px solid $base-primary;
   }
   li {
     list-style: none;
     padding: .5em 0;
     margin: 0;
-    border-bottom: 1px solid $sidebar-border;
     @extend .side-shadow-border;
     p:last-child {
       margin-bottom: 0;
     }
   }
   a {
-    color: inherit;
+    text-decoration: none;
+    color: $base-accent;
     @include transition(color .5s);
-  }
-  &:hover a {
-    color: $sidebar-link-color;
-    &:hover { color: $sidebar-link-color-hover; }
+    &:hover{
+     color: adjust-color($base-accent, $saturation: 55)
+    }
   }
 }
 .aside-alt-link {
@@ -56,50 +82,50 @@ aside.sidebar {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .toggle-sidebar {
-    outline: none;
-    position: absolute; right: -10px; top: 0; bottom: 0;
-    display: inline-block;
-    text-decoration: none;
-    color: mix($text-color-light, $sidebar-bg);
-    width: 9px;
-    cursor: pointer;
-    &:hover {
-      background: mix($sidebar-border, $sidebar-bg);
-      @include background(linear-gradient(left, rgba($sidebar-border, .5), rgba($sidebar-border, 0)));
-    }
-    &:after {
-      position: absolute; right: -11px; top: 0;
-      width: 20px;
-      font-size: 1.2em;
-      line-height: 1.1em;
-      padding-bottom: .15em;
-      @include border-bottom-right-radius(.3em);
-      text-align: center;
-      border-bottom: 1px solid $sidebar-border;
-      border-right: 1px solid $sidebar-border;
-      content: "\00BB";
-      text-indent: -1px;
-    }
-    .collapse-sidebar & {
-      text-indent: 0px;
-      right: -20px;
-      width: 19px;
-      &:hover {
-        background: mix($sidebar-border, $sidebar-bg);
-      }
-      &:after {
-        border-left: 1px solid $sidebar-border;
-        text-shadow: #fff 0 1px;
-        content: "\00AB";
-        left: 0px; right: 0;
-        text-align: center;
-        text-indent: 0;
-        border: 0;
-        border-right-width: 0;
-        background: none;
-      }
-    }
-  }
-}
+// @media only screen and (max-width: 768px) {
+//   .toggle-sidebar {
+//     outline: none;
+//     position: absolute; right: -10px; top: 0; bottom: 0;
+//     display: inline-block;
+//     text-decoration: none;
+//     color: mix($text-color-light, $sidebar-bg);
+//     width: 9px;
+//     cursor: pointer;
+//     &:hover {
+//       background: mix($sidebar-border, $sidebar-bg);
+//       @include background(linear-gradient(left, rgba($sidebar-border, .5), rgba($sidebar-border, 0)));
+//     }
+//     &:after {
+//       position: absolute; right: -11px; top: 0;
+//       width: 20px;
+//       font-size: 1.2em;
+//       line-height: 1.1em;
+//       padding-bottom: .15em;
+//       @include border-bottom-right-radius(.3em);
+//       text-align: center;
+//       border-bottom: 1px solid $sidebar-border;
+//       border-right: 1px solid $sidebar-border;
+//       content: "\00BB";
+//       text-indent: -1px;
+//     }
+//     .collapse-sidebar & {
+//       text-indent: 0px;
+//       right: -20px;
+//       width: 19px;
+//       &:hover {
+//         background: mix($sidebar-border, $sidebar-bg);
+//       }
+//       &:after {
+//         border-left: 1px solid $sidebar-border;
+//         text-shadow: #fff 0 1px;
+//         content: "\00AB";
+//         left: 0px; right: 0;
+//         text-align: center;
+//         text-indent: 0;
+//         border: 0;
+//         border-right-width: 0;
+//         background: none;
+//       }
+//     }
+//   }
+// }
