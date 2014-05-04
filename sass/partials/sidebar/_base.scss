@@ -1,6 +1,4 @@
-.side-shadow-border {
-  @include box-shadow(lighten($sidebar-bg, 5) 0 1px);
-}
+
 aside.sidebar {
   overflow: hidden;
   color: $sidebar-color;
@@ -15,7 +13,6 @@ aside.sidebar {
       margin: 1.5em 0 0;
       padding-bottom: .2em;
       border-bottom: 1px solid $sidebar-border;
-      @extend .side-shadow-border;
       + p {
         padding-top: .4em;
       }
@@ -28,7 +25,7 @@ aside.sidebar {
       padding: .3em 2.5em 0;
       font-size: .85em;
       font-family: $sans;
-      line-height: 1.1em;
+      line-height: 2em;
       width: 70%;
       @include background-clip(padding-box);
       background:url('../images/search_icon.png') lighten($base-accent, 15) 10px no-repeat;
@@ -61,7 +58,6 @@ aside.sidebar {
     list-style: none;
     padding: .5em 0;
     margin: 0;
-    @extend .side-shadow-border;
     p:last-child {
       margin-bottom: 0;
     }
