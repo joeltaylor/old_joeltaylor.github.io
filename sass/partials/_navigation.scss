@@ -9,10 +9,10 @@ body > nav {
   @media only screen and (min-width: 550px) {
     font-size: .9em;
     ul {
-      @include horizontal-list(0);
-      float: left;
       display: block;
+      margin: 0;
       padding-top: .15em;
+      text-align: center;
     }
     ul.subscription {
       margin-left: .8em;
@@ -21,6 +21,7 @@ body > nav {
     }
     ul li {
       margin: 0;
+      display: inline-block
     }
     a {
       @include link-colors($nav-color, $nav-color-hover, $visited: $nav-color);
