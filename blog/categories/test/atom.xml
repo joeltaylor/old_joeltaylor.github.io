@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Test | My Octopress Blog]]></title>
+  <title><![CDATA[Category: Test | Code Privy]]></title>
   <link href="http://joeltaylor.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://joeltaylor.github.io/"/>
-  <updated>2014-05-01T22:34:04+07:00</updated>
+  <updated>2014-05-04T08:47:13+07:00</updated>
   <id>http://joeltaylor.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Joel Taylor]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
