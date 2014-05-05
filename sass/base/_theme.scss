@@ -78,8 +78,5 @@ html {
 body {
   > div {
     border-bottom: 1px solid $page-border-bottom;
-    > div {
-      border-right: 1px solid $sidebar-border;
-    }
   }
 }
