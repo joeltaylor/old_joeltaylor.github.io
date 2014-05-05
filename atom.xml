@@ -4,7 +4,7 @@
   <title><![CDATA[Code Privy]]></title>
   <link href="http://joeltaylor.github.io/atom.xml" rel="self"/>
   <link href="http://joeltaylor.github.io/"/>
-  <updated>2014-05-05T21:22:27+07:00</updated>
+  <updated>2014-05-05T21:29:29+07:00</updated>
   <id>http://joeltaylor.github.io/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
@@ -12,14 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Test Post]]></title>
-    <link href="http://joeltaylor.github.io/blog/2014/05/01/test-post/"/>
-    <updated>2014-05-01T22:19:54+07:00</updated>
-    <id>http://joeltaylor.github.io/blog/2014/05/01/test-post</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
 </feed>

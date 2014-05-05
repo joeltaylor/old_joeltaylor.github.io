@@ -9,8 +9,7 @@
   <meta name="author" content="Joel Taylor">
 
   
-  <meta name="description" content="Blog Archive 2014 Test Post
-May 01 2014 posted in Test, category Included file 'asides/search_form.html' not found in _includes directory Recent &hellip;">
+  <meta name="description" content=" Blog Archive Previously ">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,6 +22,7 @@ May 01 2014 posted in Test, category Included file 'asides/search_form.html' not
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Code Privy" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,300' rel='stylesheet' type='text/css'>
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -36,28 +36,23 @@ May 01 2014 posted in Test, category Included file 'asides/search_form.html' not
 </head>
 
 <body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Code Privy</a></h1>
-  
-    <h2>Burgeoning towards better development</h2>
-  
-</hgroup>
+  <header role="banner"><a href="/"><span class="bear_logo"></span></a>
+<h1><a href="/">Code Privy</a></h1>
+
+  <h2>Burgeoning towards better development</h2>
+
+ <div id="background"></div>
+
 
 </header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:joeltaylor.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
 <ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
+  <li><a href="/about">About</a></li>
+  <li><a href="http://github.com/joeltaylor/">Github</a></li>
+  <li><a href="http://twitter.com/joel_codeprivy/">Twitter</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
@@ -69,27 +64,9 @@ May 01 2014 posted in Test, category Included file 'asides/search_form.html' not
   
   <header>
     <h1 class="entry-title">Blog Archive</h1>
-    
   </header>
   
   <div id="blog-archives">
-
-
-
-  
-  <h2>2014</h2>
-
-<article>
-  
-<h1><a href="/blog/2014/05/01/test-post/">Test Post</a></h1>
-<time datetime="2014-05-01T22:19:54+07:00" pubdate><span class='month'>May</span> <span class='day'>01</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/test/'>Test</a>, <a class='category' href='/blog/categories/category/'>category</a></span>
-</footer>
-
-
-</article>
 
 </div>
 
@@ -100,13 +77,17 @@ May 01 2014 posted in Test, category Included file 'asides/search_form.html' not
 
 <aside class="sidebar">
   
-    Included file 'asides/search_form.html' not found in _includes directory<section>
-  <h1>Recent Posts</h1>
+     
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:joeltaylor.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder=""/>
+  </fieldset>
+</form>
+  
+<section>
+  <h1>Previously</h1>
   <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/05/01/test-post/">Test Post</a>
-      </li>
     
   </ul>
 </section>
@@ -118,7 +99,6 @@ May 01 2014 posted in Test, category Included file 'asides/search_form.html' not
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Joel Taylor -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
@@ -140,7 +120,6 @@ May 01 2014 posted in Test, category Included file 'asides/search_form.html' not
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
-
 
 
 
