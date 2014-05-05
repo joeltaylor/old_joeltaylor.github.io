@@ -65,6 +65,9 @@ article {
       }
     }
   }
+  .entry-title{
+    color: $base-accent;
+  }
   > footer {
     padding-bottom: 2.5em;
     margin-top: 2em;
@@ -92,7 +95,16 @@ article + article {
   article header { background: none; padding-bottom: 0; }
   article h1 {
     font-size: 2.2em;
-    a { color: $blog-title; &:hover { color: $link-color-hover; } }
+    a { color: $blog-title;
+      &:hover {
+       color: $link-color-hover;
+       text-decoration: none;
+        }
+    }
+  }
+  .sharing{
+    float: right;
+    background: none;
   }
   a[rel=full-article] {
     background: darken($main-bg, 5);
