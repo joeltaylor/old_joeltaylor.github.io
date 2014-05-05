@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Code Privy]]></title>
-  <link href="http://joeltaylor.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Test | Code Privy]]></title>
+  <link href="http://joeltaylor.github.io/blog/categories/test/atom.xml" rel="self"/>
   <link href="http://joeltaylor.github.io/"/>
   <updated>2014-05-05T21:22:27+07:00</updated>
   <id>http://joeltaylor.github.io/</id>
