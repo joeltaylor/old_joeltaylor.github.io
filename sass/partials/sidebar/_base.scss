@@ -27,7 +27,7 @@ aside.sidebar {
       line-height: 2em;
       width: 70%;
       @include background-clip(padding-box);
-      background:url('../images/search_icon.png') lighten($base-accent, 15) 10px no-repeat;
+      background:url('../images/search_icon.png') lighten($base-accent, 5) 10px no-repeat;
       border: none;
       color: #FFF;
       &:focus {

@@ -3,7 +3,7 @@ layout: post
 title: "Basis of the blog"
 date: 2014-05-06 21:27:29 +0700
 comments: true
-categories:
+categories: test
 ---
 
 <p>When I started my first development job, I was advised by another developer to
