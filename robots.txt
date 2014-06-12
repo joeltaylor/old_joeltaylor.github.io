@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://joeltaylor.github.io/sitemap.xml 
+Sitemap: http://codeprivy.com/sitemap.xml 

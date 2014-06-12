@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Motivation | Code Privy]]></title>
-  <link href="http://joeltaylor.github.io/blog/categories/motivation/atom.xml" rel="self"/>
-  <link href="http://joeltaylor.github.io/"/>
-  <updated>2014-06-10T14:21:18-04:00</updated>
-  <id>http://joeltaylor.github.io/</id>
+  <link href="http://codeprivy.com/blog/categories/motivation/atom.xml" rel="self"/>
+  <link href="http://codeprivy.com/"/>
+  <updated>2014-06-12T15:57:46-04:00</updated>
+  <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Goal Time]]></title>
-    <link href="http://joeltaylor.github.io/blog/2014/05/27/goal-time/"/>
+    <link href="http://codeprivy.com/blog/2014/05/27/goal-time/"/>
     <updated>2014-05-27T14:49:47-04:00</updated>
-    <id>http://joeltaylor.github.io/blog/2014/05/27/goal-time</id>
+    <id>http://codeprivy.com/blog/2014/05/27/goal-time</id>
     <content type="html"><![CDATA[<p>I've spent the past five months living in Thailand. Now that I've returned
 to the land of fast internet and robust coffee beans, it's time to move forward with
 my Ruby on Rails agenda. To motivate myself, I've decided to set a high goal and

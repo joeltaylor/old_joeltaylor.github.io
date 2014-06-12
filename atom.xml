@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Code Privy]]></title>
-  <link href="http://joeltaylor.github.io/atom.xml" rel="self"/>
-  <link href="http://joeltaylor.github.io/"/>
-  <updated>2014-06-10T14:21:18-04:00</updated>
-  <id>http://joeltaylor.github.io/</id>
+  <link href="http://codeprivy.com/atom.xml" rel="self"/>
+  <link href="http://codeprivy.com/"/>
+  <updated>2014-06-12T15:57:46-04:00</updated>
+  <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Goal Time]]></title>
-    <link href="http://joeltaylor.github.io/blog/2014/05/27/goal-time/"/>
+    <link href="http://codeprivy.com/blog/2014/05/27/goal-time/"/>
     <updated>2014-05-27T14:49:47-04:00</updated>
-    <id>http://joeltaylor.github.io/blog/2014/05/27/goal-time</id>
+    <id>http://codeprivy.com/blog/2014/05/27/goal-time</id>
     <content type="html"><![CDATA[<p>I&#8217;ve spent the past five months living in Thailand. Now that I&#8217;ve returned
 to the land of fast internet and robust coffee beans, it&#8217;s time to move forward with
 my Ruby on Rails agenda. To motivate myself, I&#8217;ve decided to set a high goal and
@@ -122,9 +122,9 @@ reasoned that I&#8217;ll be submitting till I get accepted.</p>
   
   <entry>
     <title type="html"><![CDATA[Basis of the Blog]]></title>
-    <link href="http://joeltaylor.github.io/blog/2014/05/06/the-causation-of-blogging/"/>
+    <link href="http://codeprivy.com/blog/2014/05/06/the-causation-of-blogging/"/>
     <updated>2014-05-06T10:27:29-04:00</updated>
-    <id>http://joeltaylor.github.io/blog/2014/05/06/the-causation-of-blogging</id>
+    <id>http://codeprivy.com/blog/2014/05/06/the-causation-of-blogging</id>
     <content type="html"><![CDATA[<p>When I started my first development job, I was advised by another developer to
 start a blog and document what I was learning. At the time, it seemed like a novel
 idea but it wasn&#8217;t exactly pertinent to my scenario. Being new to development, most
