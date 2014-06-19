@@ -4,7 +4,7 @@
   <title><![CDATA[Code Privy]]></title>
   <link href="http://codeprivy.com/atom.xml" rel="self"/>
   <link href="http://codeprivy.com/"/>
-  <updated>2014-06-12T15:57:46-04:00</updated>
+  <updated>2014-06-19T19:21:33-04:00</updated>
   <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
@@ -12,6 +12,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bootstrap-sass]]></title>
+    <link href="http://codeprivy.com/blog/2014/06/19/bootstrap-sass/"/>
+    <updated>2014-06-19T18:59:40-04:00</updated>
+    <id>http://codeprivy.com/blog/2014/06/19/bootstrap-sass</id>
+    <content type="html"><![CDATA[<p>I use Bootstrap so that I can focus on developing as opposed to designing. It&#8217;s
+all fun and games till your entire layout breaks for &#8220;no reason&#8221;.</p>
+
+
+
+
+<p>I was experimenting with different versions of Bootstrap-sass and ended up using
+version 3.1.1. Despite having run
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle update</span></code></pre></td></tr></table></div></figure>
+and restarting the server,
+my app was using the wrong version of Bootstrap (v.2.1.2).</p>
+
+
+
+
+<p>Simple fix. Shut down the server and run:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake tmp:clear</span></code></pre></td></tr></table></div></figure></p>
+
+
+
+
+<p>I&#8217;m a bit ashamed it took me more than 5 minutes to figure this out.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Goal Time]]></title>

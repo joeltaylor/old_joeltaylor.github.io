@@ -9,8 +9,8 @@
   <meta name="author" content="Joel Taylor">
 
   
-  <meta name="description" content="I&#8217;ve spent the past five months living in Thailand. Now that I&#8217;ve returned
-to the land of fast internet and robust coffee beans, it&#8217 &hellip;">
+  <meta name="description" content="I use Bootstrap so that I can focus on developing as opposed to designing. It&#8217;s
+all fun and games till your entire layout breaks for &#8220;no &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +74,83 @@ to the land of fast internet and robust coffee beans, it&#8217 &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/19/bootstrap-sass/">Bootstrap-sass</a></h1>
+    
+    
+      <p class="meta">
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://codeprivy.com/index.html" data-via="joel_codeprivy" data-counturl="http://codeprivy.com/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-19T18:59:40-04:00" pubdate data-updated="true">Jun 19<span>th</span>, 2014</time>
+
+<span class="categories">
+|
+  
+    <a class='category' href='/blog/categories/fix/'>Fix</a>, <a class='category' href='/blog/categories/rails/'>Rails,</a>
+  
+</span>
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I use Bootstrap so that I can focus on developing as opposed to designing. It&#8217;s
+all fun and games till your entire layout breaks for &#8220;no reason&#8221;.</p>
+
+
+
+
+<p>I was experimenting with different versions of Bootstrap-sass and ended up using
+version 3.1.1. Despite having run
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>bundle update</span></code></pre></td></tr></table></div></figure>
+and restarting the server,
+my app was using the wrong version of Bootstrap (v.2.1.2).</p>
+
+
+
+
+<p>Simple fix. Shut down the server and run:
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake tmp:clear</span></code></pre></td></tr></table></div></figure></p>
+
+
+
+
+<p>I&#8217;m a bit ashamed it took me more than 5 minutes to figure this out.</p>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -334,6 +411,10 @@ well as increase my understanding of the code at hand. </p>
 <section>
   <h1>Previously</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/19/bootstrap-sass/">Bootstrap-sass</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/05/27/goal-time/">Goal Time</a>
