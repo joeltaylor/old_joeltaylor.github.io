@@ -3,7 +3,7 @@ layout: post
 title: "Bootstrap-sass"
 date: 2014-06-19 18:59:40 -0400
 comments: true
-categories: Rails, Fix
+categories: Rails
 ---
 
 <p>I use Bootstrap so that I can focus on developing as opposed to designing. It's
