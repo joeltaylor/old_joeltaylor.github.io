@@ -15,9 +15,8 @@ in Xcode I was able to replicate it.<p>
 I don't always navigate backwards. My first attempt was to hide the navigation on page
 load but the event wouldn't trigger on the iPad.</p>
 
-<p>It turns out that many mobile devices use
-<a href="https://developer.mozilla.org/en-US/docs/Using_Firefox_1.5_caching">back-forward cache
-</a>to decrease load time. In order to cause the page to reload as opposed to serving the
+<p>It turns out that many mobile devices use <a href="https://developer.mozilla.org/en-US/docs/Using_Firefox_1.5_caching">back-forward cache</a>
+to decrease load time. In order to cause the page to reload as opposed to serving the
 cached page you can use this javascript : </p>
 
 ``` javascript
