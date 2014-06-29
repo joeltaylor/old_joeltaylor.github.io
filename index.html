@@ -9,8 +9,8 @@
   <meta name="author" content="Joel Taylor">
 
   
-  <meta name="description" content="I use Bootstrap so that I can focus on developing as opposed to designing. It&#8217;s
-all fun and games till your entire layout breaks for &#8220;no &hellip;">
+  <meta name="description" content="A client reported a bug when using their iPad to navigate their site.
+When the user selects a page from the dropdown mobile navigation and then &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,6 +80,93 @@ all fun and games till your entire layout breaks for &#8220;no &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/06/29/iphone/">Mobile Caching</a></h1>
+    
+    
+      <p class="meta">
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://codeprivy.com/index.html" data-via="joel_codeprivy" data-counturl="http://codeprivy.com/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-29T14:09:26-04:00" pubdate data-updated="true">Jun 29<span>th</span>, 2014</time>
+
+<span class="categories">
+|
+  
+    <a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/mobile/'>Mobile</a>
+  
+</span>
+
+
+        
+           | <a href="/blog/2014/06/29/iphone/#disqus_thread"
+             data-disqus-identifier="http://codeprivy.com/blog/2014/06/29/iphone/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><p>A client reported a <em>bug</em> when using their iPad to navigate their site.
+When the user selects a page from the dropdown mobile navigation and then presses
+&ldquo;Back&rdquo; they return to the previous page with the navigation menu still open. I tried
+to replicate the issue on my iPhone (4s) with no luck but when I ran the iPad simulator
+in Xcode I was able to replicate it.<p></p>
+
+<p><p>I never experienced this sort of behavior before but then again, when testing sites,
+I don&rsquo;t always navigate backwards. My first attempt was to hide the navigation on page
+load but the event wouldn&rsquo;t trigger on the iPad.</p></p>
+
+<p><p>It turns out that many mobile devices use
+<a href="https://developer.mozilla.org/en-US/docs/Using_Firefox_1.5_caching">back-forward cache
+</a>to decrease load time. In order to cause the page to reload as opposed to serving the
+cached page you can use this javascript : </p></p>
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>  <span class="nb">window</span><span class="p">.</span><span class="nx">onpageshow</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">persisted</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">;</span> <span class="c1">//remove the occasional page flash</span>
+</span><span class='line'>      <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p><p>Of course, this method is a bit backwards as I don&rsquo;t really need to reload the
+entire page. Instead, I can just resort back to hiding the navigation to take
+advantage of the page caching.</p></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/06/19/bootstrap-sass/">Bootstrap-sass</a></h1>
     
     
@@ -109,11 +196,14 @@ all fun and games till your entire layout breaks for &#8220;no &hellip;">
 <span class="categories">
 |
   
-    <a class='category' href='/blog/categories/fix/'>Fix</a>, <a class='category' href='/blog/categories/rails/'>Rails,</a>
+    <a class='category' href='/blog/categories/rails/'>Rails</a>
   
 </span>
 
 
+        
+           | <a href="/blog/2014/06/19/bootstrap-sass/#disqus_thread"
+             data-disqus-identifier="http://codeprivy.com/blog/2014/06/19/bootstrap-sass/">Comments</a>
         
       </p>
     
@@ -191,6 +281,9 @@ my app was using the wrong version of Bootstrap (v.2.1.2).</p>
 </span>
 
 
+        
+           | <a href="/blog/2014/05/27/goal-time/#disqus_thread"
+             data-disqus-identifier="http://codeprivy.com/blog/2014/05/27/goal-time/">Comments</a>
         
       </p>
     
@@ -336,6 +429,9 @@ reasoned that I&#8217;ll be submitting till I get accepted.</p>
 
 
         
+           | <a href="/blog/2014/05/06/the-causation-of-blogging/#disqus_thread"
+             data-disqus-identifier="http://codeprivy.com/blog/2014/05/06/the-causation-of-blogging/">Comments</a>
+        
       </p>
     
   </header>
@@ -413,6 +509,10 @@ well as increase my understanding of the code at hand. </p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/06/29/iphone/">Mobile Caching</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/19/bootstrap-sass/">Bootstrap-sass</a>
       </li>
     
@@ -438,6 +538,19 @@ well as increase my understanding of the code at hand. </p>
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'codeprivy';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

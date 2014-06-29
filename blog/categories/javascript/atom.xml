@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Javascript | Code Privy]]></title>
+  <link href="http://codeprivy.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://codeprivy.com/"/>
+  <updated>2014-06-29T15:03:24-04:00</updated>
+  <id>http://codeprivy.com/</id>
+  <author>
+    <name><![CDATA[Joel Taylor]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Mobile Caching]]></title>
+    <link href="http://codeprivy.com/blog/2014/06/29/iphone/"/>
+    <updated>2014-06-29T14:09:26-04:00</updated>
+    <id>http://codeprivy.com/blog/2014/06/29/iphone</id>
+    <content type="html"><![CDATA[<p><p>A client reported a <em>bug</em> when using their iPad to navigate their site.
+When the user selects a page from the dropdown mobile navigation and then presses
+&ldquo;Back&rdquo; they return to the previous page with the navigation menu still open. I tried
+to replicate the issue on my iPhone (4s) with no luck but when I ran the iPad simulator
+in Xcode I was able to replicate it.<p></p>
+
+<p><p>I never experienced this sort of behavior before but then again, when testing sites,
+I don&rsquo;t always navigate backwards. My first attempt was to hide the navigation on page
+load but the event wouldn&rsquo;t trigger on the iPad.</p></p>
+
+<p><p>It turns out that many mobile devices use
+<a href="https://developer.mozilla.org/en-US/docs/Using_Firefox_1.5_caching">back-forward cache
+</a>to decrease load time. In order to cause the page to reload as opposed to serving the
+cached page you can use this javascript : </p></p>
+
+<p>``` javascript
+  window.onpageshow = function(event) {</p>
+
+<pre><code>if (event.persisted) {
+  document.body.style.display = "none"; //remove the occasional page flash
+  location.reload();
+}
+</code></pre>
+
+<p>};
+```</p>
+
+<p><p>Of course, this method is a bit backwards as I don&rsquo;t really need to reload the
+entire page. Instead, I can just resort back to hiding the navigation to take
+advantage of the page caching.</p></p>
+]]></content>
+  </entry>
+  
+</feed>

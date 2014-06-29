@@ -4,7 +4,7 @@
   <title><![CDATA[Code Privy]]></title>
   <link href="http://codeprivy.com/atom.xml" rel="self"/>
   <link href="http://codeprivy.com/"/>
-  <updated>2014-06-29T13:52:45-04:00</updated>
+  <updated>2014-06-29T15:03:24-04:00</updated>
   <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mobile Caching]]></title>
+    <link href="http://codeprivy.com/blog/2014/06/29/iphone/"/>
+    <updated>2014-06-29T14:09:26-04:00</updated>
+    <id>http://codeprivy.com/blog/2014/06/29/iphone</id>
+    <content type="html"><![CDATA[<p><p>A client reported a <em>bug</em> when using their iPad to navigate their site.
+When the user selects a page from the dropdown mobile navigation and then presses
+&ldquo;Back&rdquo; they return to the previous page with the navigation menu still open. I tried
+to replicate the issue on my iPhone (4s) with no luck but when I ran the iPad simulator
+in Xcode I was able to replicate it.<p></p>
+
+<p><p>I never experienced this sort of behavior before but then again, when testing sites,
+I don&rsquo;t always navigate backwards. My first attempt was to hide the navigation on page
+load but the event wouldn&rsquo;t trigger on the iPad.</p></p>
+
+<p><p>It turns out that many mobile devices use
+<a href="https://developer.mozilla.org/en-US/docs/Using_Firefox_1.5_caching">back-forward cache
+</a>to decrease load time. In order to cause the page to reload as opposed to serving the
+cached page you can use this javascript : </p></p>
+
+<p><figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'>  <span class="nb">window</span><span class="p">.</span><span class="nx">onpageshow</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">persisted</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s2">&quot;none&quot;</span><span class="p">;</span> <span class="c1">//remove the occasional page flash</span>
+</span><span class='line'>      <span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">};</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p><p>Of course, this method is a bit backwards as I don&rsquo;t really need to reload the
+entire page. Instead, I can just resort back to hiding the navigation to take
+advantage of the page caching.</p></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Bootstrap-sass]]></title>
