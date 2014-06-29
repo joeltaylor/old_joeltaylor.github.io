@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Javascript | Code Privy]]></title>
   <link href="http://codeprivy.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://codeprivy.com/"/>
-  <updated>2014-06-29T15:09:37-04:00</updated>
+  <updated>2014-06-29T15:27:09-04:00</updated>
   <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
@@ -28,9 +28,8 @@ in Xcode I was able to replicate it.<p></p>
 I don&rsquo;t always navigate backwards. My first attempt was to hide the navigation on page
 load but the event wouldn&rsquo;t trigger on the iPad.</p></p>
 
-<p><p>It turns out that many mobile devices use
-<a href="https://developer.mozilla.org/en-US/docs/Using_Firefox_1.5_caching">back-forward cache
-</a>to decrease load time. In order to cause the page to reload as opposed to serving the
+<p><p>It turns out that many mobile devices use <a href="https://developer.mozilla.org/en-US/docs/Using_Firefox_1.5_caching">back-forward cache</a>
+to decrease load time. In order to cause the page to reload as opposed to serving the
 cached page you can use this javascript : </p></p>
 
 <p>``` javascript
