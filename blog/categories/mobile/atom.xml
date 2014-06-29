@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Mobile | Code Privy]]></title>
   <link href="http://codeprivy.com/blog/categories/mobile/atom.xml" rel="self"/>
   <link href="http://codeprivy.com/"/>
-  <updated>2014-06-29T15:03:24-04:00</updated>
+  <updated>2014-06-29T15:09:37-04:00</updated>
   <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mobile Caching]]></title>
-    <link href="http://codeprivy.com/blog/2014/06/29/iphone/"/>
+    <link href="http://codeprivy.com/blog/2014/06/29/mobile-caching/"/>
     <updated>2014-06-29T14:09:26-04:00</updated>
-    <id>http://codeprivy.com/blog/2014/06/29/iphone</id>
+    <id>http://codeprivy.com/blog/2014/06/29/mobile-caching</id>
     <content type="html"><![CDATA[<p><p>A client reported a <em>bug</em> when using their iPad to navigate their site.
 When the user selects a page from the dropdown mobile navigation and then presses
 &ldquo;Back&rdquo; they return to the previous page with the navigation menu still open. I tried
