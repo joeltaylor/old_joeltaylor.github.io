@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Rails | Code Privy]]></title>
-  <link href="http://codeprivy.com/blog/categories/rails/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Vagrant | Code Privy]]></title>
+  <link href="http://codeprivy.com/blog/categories/vagrant/atom.xml" rel="self"/>
   <link href="http://codeprivy.com/"/>
   <updated>2014-07-01T12:34:11-04:00</updated>
   <id>http://codeprivy.com/</id>
@@ -75,41 +75,6 @@ lc_collate='en_US.utf8' lc_ctype='en_US.utf8' template template0;
 update pg_database set datistemplate=true where datname='template1';
 ```
 </p>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bootstrap-sass]]></title>
-    <link href="http://codeprivy.com/blog/2014/06/19/bootstrap-sass/"/>
-    <updated>2014-06-19T18:59:40-04:00</updated>
-    <id>http://codeprivy.com/blog/2014/06/19/bootstrap-sass</id>
-    <content type="html"><![CDATA[<p>I use Bootstrap so that I can focus on developing as opposed to designing. It's
-all fun and games till your entire layout breaks for "no reason".</p>
-
-
-
-
-<p>I was experimenting with different versions of Bootstrap-sass and ended up using
-version 3.1.1. Despite having run
-```
-bundle update
-```
-and restarting the server,
-my app was using the wrong version of Bootstrap (v.2.1.2).</p>
-
-
-
-
-<p>Simple fix. Shut down the server and run:
-```
-rake tmp:clear
-```</p>
-
-
-
-
-<p>I'm a bit ashamed it took me more than 5 minutes to figure this out.</p>
 
 ]]></content>
   </entry>

@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Bootstrap-sass - Code Privy</title>
+  <title>Rails With Vagrant - Code Privy</title>
   <meta name="author" content="Joel Taylor">
 
   
-  <meta name="description" content="I use Bootstrap so that I can focus on developing as opposed to designing. It&#8217;s
-all fun and games till your entire layout breaks for &#8220;no &hellip;">
+  <meta name="description" content="Vagrant makes setting up a development environment simple. Even more, the environments
+can be shared to reduce any compatibility issues with a user&# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ all fun and games till your entire layout breaks for &#8220;no &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://codeprivy.com/blog/2014/06/19/bootstrap-sass">
+  <link rel="canonical" href="http://codeprivy.com/blog/2014/07/01/rails-with-vagrant">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Code Privy" type="application/atom+xml">
@@ -77,13 +77,13 @@ all fun and games till your entire layout breaks for &#8220;no &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Bootstrap-sass</h1>
+      <h1 class="entry-title">Rails With Vagrant</h1>
     
     
       <p class="meta">
         <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://codeprivy.com/blog/2014/06/19/bootstrap-sass/" data-via="joeltayl" data-counturl="http://codeprivy.com/blog/2014/06/19/bootstrap-sass/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://codeprivy.com/blog/2014/07/01/rails-with-vagrant/" data-via="joeltayl" data-counturl="http://codeprivy.com/blog/2014/07/01/rails-with-vagrant/" >Tweet</a>
   
   
   
@@ -101,12 +101,12 @@ all fun and games till your entire layout breaks for &#8220;no &hellip;">
   
 
 
-<time datetime="2014-06-19T18:59:40-04:00" pubdate data-updated="true">Jun 19<span>th</span>, 2014</time>
+<time datetime="2014-07-01T12:09:07-04:00" pubdate data-updated="true">Jul 1<span>st</span>, 2014</time>
 
 <span class="categories">
 |
   
-    <a class='category' href='/blog/categories/rails/'>Rails</a>
+    <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/vagrant/'>Vagrant</a>
   
 </span>
 
@@ -117,30 +117,70 @@ all fun and games till your entire layout breaks for &#8220;no &hellip;">
   </header>
 
 
-<div class="entry-content"><p>I use Bootstrap so that I can focus on developing as opposed to designing. It&#8217;s
-all fun and games till your entire layout breaks for &#8220;no reason&#8221;.</p>
+<div class="entry-content"><p>Vagrant makes setting up a development environment simple. Even more, the environments
+can be shared to reduce any compatibility issues with a user&#8217;s personal setup.
+More often than not, when I clone a project, I have to spend a good deal of time
+getting all the components of a project to work with my setup. I&#8217;m a fan of cloning
+a project, running <code>vagrant up</code> and getting started immediately. Vagrant
+is the golden sandbox that has me a bit too thrilled.</p>
 
 
 
 
-<p>I was experimenting with different versions of Bootstrap-sass and ended up using
-version 3.1.1. Despite having run
+<p>The folks at JumpstartLab put out an excellent
+<a href="http://tutorials.jumpstartlab.com/topics/vagrant_setup.html">tutorial</a> on
+getting Vagrant setup with all the basic necessities. One issue I continued to run
+into though was a language error with Postgres when trying to run
+<code>rake db:create </code>. The error read:
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>bundle update</span></code></pre></td></tr></table></div></figure>
-and restarting the server,
-my app was using the wrong version of Bootstrap (v.2.1.2).</p>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>PG::InvalidParameterValue: ERROR:  encoding UTF8 does not match locale en_US
+</span><span class='line'>DETAIL:  The chosen LC_CTYPE setting requires encoding LATIN1.
+</span><span class='line'>: CREATE DATABASE "platform_validator_development" ENCODING = 'utf8'</span></code></pre></td></tr></table></div></figure>
+</p>
 
 
-
-
-<p>Simple fix. Shut down the server and run:
+<p>
+This seems to happen when the locale lang isn&#8217;t set before creating a database instance
+inside vagrant. As in the tutorial posted above, it&#8217;s important to run
+<code>sudo /usr/sbin/update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8</code>
+before running:
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>rake tmp:clear</span></code></pre></td></tr></table></div></figure></p>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo mkdir -p /usr/local/pgsql/data
+</span><span class='line'>sudo chown postgres:postgres /usr/local/pgsql/data
+</span><span class='line'>sudo su postgres
+</span><span class='line'>/usr/lib/postgresql/9.1/bin/initdb -D /usr/local/pgsql/data
+</span><span class='line'>createuser vagrant</span></code></pre></td></tr></table></div></figure>
+ </p>
 
 
 
 
-<p>I&#8217;m a bit ashamed it took me more than 5 minutes to figure this out.</p>
+<p>
+Another solution, regardless of using Vagrant or not, is to update the template of
+your database instance. This can be done by running the following:
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo su postgres
+</span><span class='line'>psql</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>update pg_database set datistemplate=false where datname='template1';
+</span><span class='line'>drop database Template1;
+</span><span class='line'>create database template1 with owner=postgres encoding='UTF-8'
+</span><span class='line'>lc_collate='en_US.utf8' lc_ctype='en_US.utf8' template template0;
+</span><span class='line'>update pg_database set datistemplate=true where datname='template1';</span></code></pre></td></tr></table></div></figure>
+</p>
 
 </div>
 
@@ -148,10 +188,8 @@ my app was using the wrong version of Bootstrap (v.2.1.2).</p>
   <footer>
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/05/27/goal-time/" title="Previous Post: Goal time">&laquo; Goal time</a>
+        <a class="basic-alignment left" href="/blog/2014/06/29/mobile-caching/" title="Previous Post: Mobile caching">&laquo; Mobile caching</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/06/29/mobile-caching/" title="Next Post: Mobile caching">Mobile caching &raquo;</a>
       
     </p>
   </footer>
