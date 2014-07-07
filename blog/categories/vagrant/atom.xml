@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Vagrant | Code Privy]]></title>
   <link href="http://codeprivy.com/blog/categories/vagrant/atom.xml" rel="self"/>
   <link href="http://codeprivy.com/"/>
-  <updated>2014-07-01T12:34:11-04:00</updated>
+  <updated>2014-07-07T17:16:36-04:00</updated>
   <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
@@ -38,23 +38,27 @@ into though was a language error with Postgres when trying to run
 PG::InvalidParameterValue: ERROR:  encoding UTF8 does not match locale en_US
 DETAIL:  The chosen LC_CTYPE setting requires encoding LATIN1.
 : CREATE DATABASE "platform_validator_development" ENCODING = 'utf8'
+
 ```
 </p>
 
 
 <p>
-This seems to happen when the locale lang isn't set before creating a database instance
-inside vagrant. As in the tutorial posted above, it's important to run
+This tends to happen when the locale isn't set before creating a database instance
+inside vagrant. Digging deeper into the issue, the
+<a href="http://www.postgresql.org/docs/8.2/static/locale.html">Postgres doc</a> states:
+<blockquote><p>"Note that the locale behavior of the server is determined by the environment variables seen by the server, not by the<br/>environment of any client. Therefore, be careful to configure the correct locale<br/>settings before starting the server."</p></blockquote>
+</p>
+
+
+<p>
+The peculiar thing about Ubuntu is that when you execute<code>sudo apt-get install postgresql libpq-dev</code>
+it starts the service immediately and thus sets the locale to Latin1 (at least for the precise32 box).
+Therefore, it's best practice to run
 <code>sudo /usr/sbin/update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8</code>
-before running:
-```
-sudo mkdir -p /usr/local/pgsql/data
-sudo chown postgres:postgres /usr/local/pgsql/data
-sudo su postgres
-/usr/lib/postgresql/9.1/bin/initdb -D /usr/local/pgsql/data
-createuser vagrant
-```
- </p>
+before even installing Postgres. Note, you'll need to run <code>vagrant provision </code> to
+see the locale change.
+</p>
 
 
 
@@ -66,7 +70,9 @@ your database instance. This can be done by running the following:
 ```
 sudo su postgres
 psql
+
 ```
+
 ```
 update pg_database set datistemplate=false where datname='template1';
 drop database Template1;

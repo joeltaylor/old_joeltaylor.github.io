@@ -138,26 +138,27 @@ into though was a language error with Postgres when trying to run
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>PG::InvalidParameterValue: ERROR:  encoding UTF8 does not match locale en_US
 </span><span class='line'>DETAIL:  The chosen LC_CTYPE setting requires encoding LATIN1.
-</span><span class='line'>: CREATE DATABASE "platform_validator_development" ENCODING = 'utf8'</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>: CREATE DATABASE "platform_validator_development" ENCODING = 'utf8'
+</span></code></pre></td></tr></table></div></figure>
 </p>
 
 
 <p>
-This seems to happen when the locale lang isn&#8217;t set before creating a database instance
-inside vagrant. As in the tutorial posted above, it&#8217;s important to run
+This tends to happen when the locale isn&#8217;t set before creating a database instance
+inside vagrant. Digging deeper into the issue, the
+<a href="http://www.postgresql.org/docs/8.2/static/locale.html">Postgres doc</a> states:
+<blockquote><p>&#8220;Note that the locale behavior of the server is determined by the environment variables seen by the server, not by the<br/>environment of any client. Therefore, be careful to configure the correct locale<br/>settings before starting the server.&#8221;</p></blockquote>
+</p>
+
+
+<p>
+The peculiar thing about Ubuntu is that when you execute<code>sudo apt-get install postgresql libpq-dev</code>
+it starts the service immediately and thus sets the locale to Latin1 (at least for the precise32 box).
+Therefore, it&#8217;s best practice to run
 <code>sudo /usr/sbin/update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8</code>
-before running:
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo mkdir -p /usr/local/pgsql/data
-</span><span class='line'>sudo chown postgres:postgres /usr/local/pgsql/data
-</span><span class='line'>sudo su postgres
-</span><span class='line'>/usr/lib/postgresql/9.1/bin/initdb -D /usr/local/pgsql/data
-</span><span class='line'>createuser vagrant</span></code></pre></td></tr></table></div></figure>
- </p>
+before even installing Postgres. Note, you&#8217;ll need to run <code>vagrant provision </code> to
+see the locale change.
+</p>
 
 
 
@@ -169,7 +170,9 @@ your database instance. This can be done by running the following:
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>sudo su postgres
-</span><span class='line'>psql</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>psql
+</span></code></pre></td></tr></table></div></figure>
+
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
