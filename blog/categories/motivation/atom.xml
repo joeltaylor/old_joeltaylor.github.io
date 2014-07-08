@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Motivation | Code Privy]]></title>
   <link href="http://codeprivy.com/blog/categories/motivation/atom.xml" rel="self"/>
   <link href="http://codeprivy.com/"/>
-  <updated>2014-07-07T17:16:36-04:00</updated>
+  <updated>2014-07-08T13:18:32-04:00</updated>
   <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
@@ -102,11 +102,10 @@ reasoned that I'll be submitting till I get accepted.</p>
 
 
 <ul>
-  <li>Read a new book each week (those related to Ruby, Rails, Agile development, etc)</li>
+  <li>Aim to read a new book each week (those related to Ruby, Rails, Agile development, etc)</li>
   <li>Devote at least 5 hours a week to an open source project</li>
-  <li>Develop a CMS - one from scratch and another using open source resources</li>
-  <li>Develop a personal site to represent myself</li>
-  <li>Develop an application that makes use of APIs</li>
+  <li>Keep the blog rolling with what I'm learning</li>
+  <li>Develop and deploy some apps (do my best to TDD them as well)</li>
   <li>Use Vim to develop from here on</li>
 </ul>
 
