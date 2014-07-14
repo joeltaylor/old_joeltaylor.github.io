@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | Code Privy]]></title>
   <link href="http://codeprivy.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://codeprivy.com/"/>
-  <updated>2014-07-08T13:18:32-04:00</updated>
+  <updated>2014-07-13T21:02:52-04:00</updated>
   <id>http://codeprivy.com/</id>
   <author>
     <name><![CDATA[Joel Taylor]]></name>
@@ -12,6 +12,40 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Capybara and Vagrant]]></title>
+    <link href="http://codeprivy.com/blog/2014/07/13/capybara-and-vagrant/"/>
+    <updated>2014-07-13T20:22:06-04:00</updated>
+    <id>http://codeprivy.com/blog/2014/07/13/capybara-and-vagrant</id>
+    <content type="html"><![CDATA[<p>Here's a quick-tip for Vagrant users:</p>
+
+
+
+
+<p>One of my favorite tools that Capybara has to offer is <code>save_and_open_page</code>
+for those times when you're left wondering where exactly your fictional user ended up.
+Unfortunately, when using a VM without a GUI, there's no browser to open the page in.
+</p>
+
+
+
+
+<p>Luckily, there's a really simple workaround. In your test helper add
+<code>Capybara.save_and_open_page_path = "/vagrant/debug_pages"</code> and the
+page will now be saved as HTML in your /vagrant directory. Of course, you can name
+the holding directory anything you want. In your tests you'll  need to use <code>save_page</code>
+to avoid the browser error and find the page saved in your specified directory.</p>
+
+
+
+
+<p>Keep on keeping vagrant up.</p>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rails With Vagrant]]></title>

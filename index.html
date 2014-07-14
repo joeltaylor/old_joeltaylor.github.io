@@ -9,8 +9,8 @@
   <meta name="author" content="Joel Taylor">
 
   
-  <meta name="description" content="Vagrant makes setting up a development environment simple. Even more, the environments
-can be shared to reduce any compatibility issues with a user&# &hellip;">
+  <meta name="description" content="Here&#8217;s a quick-tip for Vagrant users: One of my favorite tools that Capybara has to offer is save_and_open_page
+for those times when you&#8217; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +74,84 @@ can be shared to reduce any compatibility issues with a user&# &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/13/capybara-and-vagrant/">Capybara and Vagrant</a></h1>
+    
+    
+      <p class="meta">
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://codeprivy.com/index.html" data-via="joeltayl" data-counturl="http://codeprivy.com/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-13T20:22:06-04:00" pubdate data-updated="true">Jul 13<span>th</span>, 2014</time>
+
+<span class="categories">
+|
+  
+    <a class='category' href='/blog/categories/capybara/'>Capybara</a>, <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/vagrant/'>Vagrant</a>
+  
+</span>
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here&#8217;s a quick-tip for Vagrant users:</p>
+
+
+
+
+<p>One of my favorite tools that Capybara has to offer is <code>save_and_open_page</code>
+for those times when you&#8217;re left wondering where exactly your fictional user ended up.
+Unfortunately, when using a VM without a GUI, there&#8217;s no browser to open the page in.
+</p>
+
+
+
+
+<p>Luckily, there&#8217;s a really simple workaround. In your test helper add
+<code>Capybara.save_and_open_page_path = "/vagrant/debug_pages"</code> and the
+page will now be saved as HTML in your /vagrant directory. Of course, you can name
+the holding directory anything you want. In your tests you&#8217;ll  need to use <code>save_page</code>
+to avoid the browser error and find the page saved in your specified directory.</p>
+
+
+
+
+<p>Keep on keeping vagrant up.</p>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -615,6 +693,10 @@ well as increase my understanding of the code at hand. </p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/07/13/capybara-and-vagrant/">Capybara and Vagrant</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/01/rails-with-vagrant/">Rails With Vagrant</a>
       </li>
     
@@ -628,10 +710,6 @@ well as increase my understanding of the code at hand. </p>
     
       <li class="post">
         <a href="/blog/2014/05/27/goal-time/">Goal Time</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/06/the-causation-of-blogging/">Basis of the Blog</a>
       </li>
     
   </ul>
