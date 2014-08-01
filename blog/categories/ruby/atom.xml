@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Code Privy]]></title>
+  <link href="http://codeprivy.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://codeprivy.com/"/>
+  <updated>2014-08-01T15:58:07-04:00</updated>
+  <id>http://codeprivy.com/</id>
+  <author>
+    <name><![CDATA[Joel Taylor]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Symbol to Proc]]></title>
+    <link href="http://codeprivy.com/blog/2014/08/01/symbol-to-proc/"/>
+    <updated>2014-08-01T13:11:52-04:00</updated>
+    <id>http://codeprivy.com/blog/2014/08/01/symbol-to-proc</id>
+    <content type="html"><![CDATA[<p>I was going through some Ruby coding exercises to improve my overall vocabulary
+and came across some pretty sweet syntactic sugar with Symbol#to_proc. Check this out:</p>
+
+
+<p>``` ruby
+my_sentence = &ldquo;The big Red DOG jumped over the fence&rdquo;</p>
+
+<p>def downcase_it(sentence)
+  sentence.split(&ldquo; &rdquo;).map(&amp;:downcase) # => Same as sentence.split(&ldquo; &rdquo;).map{ |n| n.downcase}
+end</p>
+
+<p>print downcase_it(my_sentence)</p>
+
+<h1>=> [&ldquo;the&rdquo;, &ldquo;big&rdquo;, &ldquo;red&rdquo;, &ldquo;dog&rdquo;, &ldquo;jumped&rdquo;, &ldquo;over&rdquo;, &ldquo;the&rdquo;, &ldquo;fence&rdquo;]</h1>
+
+<p>```</p>
+
+<p>This is a great solution for those relatively simple iterations you may need to do.
+I'm always in favor of typing less.</p>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

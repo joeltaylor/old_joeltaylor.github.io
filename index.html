@@ -9,8 +9,8 @@
   <meta name="author" content="Joel Taylor">
 
   
-  <meta name="description" content="Here&#8217;s a quick-tip for Vagrant users: One of my favorite tools that Capybara has to offer is save_and_open_page
-for those times when you&#8217; &hellip;">
+  <meta name="description" content="I was going through some Ruby coding exercises to improve my overall vocabulary
+and came across some pretty sweet syntactic sugar with Symbol#to_proc &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +74,90 @@ for those times when you&#8217; &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/01/symbol-to-proc/">Symbol to Proc</a></h1>
+    
+    
+      <p class="meta">
+        <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://codeprivy.com/index.html" data-via="joeltayl" data-counturl="http://codeprivy.com/index.html" >Tweet</a>
+  
+  
+  
+</div>
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-01T13:11:52-04:00" pubdate data-updated="true">Aug 1<span>st</span>, 2014</time>
+
+<span class="categories">
+|
+  
+    <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was going through some Ruby coding exercises to improve my overall vocabulary
+and came across some pretty sweet syntactic sugar with Symbol#to_proc. Check this out:</p>
+
+
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">my_sentence</span> <span class="o">=</span> <span class="s2">&quot;The big Red DOG jumped over the fence&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">downcase_it</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">sentence</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:downcase</span><span class="p">)</span> <span class="c1"># =&gt; Same as sentence.split(&quot; &quot;).map{ |n| n.downcase}</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">print</span> <span class="n">downcase_it</span><span class="p">(</span><span class="n">my_sentence</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># =&gt; [&quot;the&quot;, &quot;big&quot;, &quot;red&quot;, &quot;dog&quot;, &quot;jumped&quot;, &quot;over&quot;, &quot;the&quot;, &quot;fence&quot;]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This is a great solution for those relatively simple iterations you may need to do.
+I&#8217;m always in favor of typing less.</p>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -543,6 +627,10 @@ well as increase my understanding of the code at hand. </p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/01/symbol-to-proc/">Symbol to Proc</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/07/13/capybara-and-vagrant/">Capybara and Vagrant</a>
       </li>
     
@@ -556,10 +644,6 @@ well as increase my understanding of the code at hand. </p>
     
       <li class="post">
         <a href="/blog/2014/06/19/bootstrap-sass/">Bootstrap-sass</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/06/the-causation-of-blogging/">Basis of the Blog</a>
       </li>
     
   </ul>
